@@ -35,8 +35,8 @@ const data = [
     text: 'Lionel Messi'
   },
   {
-    image: './img/LucasRadebe.png',
-    text: 'Lucas Radebe'
+    image: './img/GermánCano.png',
+    text: 'Germán Cano'
   },
   {
     image: './img/MarkViduka.png',
@@ -64,11 +64,43 @@ const data = [
   },
   {
     image: './img/HakanCalhanoglu.png',
-    text: 'Hakan Calhanoglu'
+    text: 'Hakan Çalhanoglu'
   },
   {
     image: './img/DenisCheryshev.png',
     text: 'Denis Cheryshev'
+  },
+  {
+    image: './img/EmilForsberg.png',
+    text: 'Emil Forsberg'
+  },
+  {
+    image: './img/SergioRamos.png',
+    text: 'Sergio Ramos'
+  },
+  {
+    image: './img/KevinDeBruyne.png',
+    text: 'Kevin De Bruyne'
+  },
+  {
+    image: './img/GeorginioWijnaldum.png',
+    text: 'Georginio Wijnaldum'
+  },
+  {
+    image: './img/RobertLewandowski.png',
+    text: 'Robert Lewandowski'
+  },
+  {
+    image: './img/ThierryHenry.png',
+    text: 'Thierry Henry'
+  },
+  {
+    image: './img/PatrikSchick.png',
+    text: 'Patrik Schicki'
+  },
+  {
+    image: './img/LucasRadebe.png',
+    text: 'Lucas Radebe'
   },
 ]
 
@@ -85,10 +117,20 @@ function createBox(item){
     <p class="info">${text}</p>
   ` 
 
-  // todo - speak event
+  box.addEventListener('click', () => {
+    setTextMessage(text)
+    speakText()
+
+    // Add active effect
+    box.classList.add('active')
+    setTimeout(() => box.classList.remove('active'), 800)
+  })
 
   main.appendChild(box)
 }
+
+// Init speech 
+const message = new SpeechSynthesisUtterance();
 
 // Store voices
 let voices = [];
@@ -106,6 +148,21 @@ function getVoices() {
   })
 }
 
+//  Set text
+function setTextMessage(text) {
+  message.text = text;
+}
+
+// Speak text
+function speakText() {
+  speechSynthesis.speak(message)
+}
+
+// Set voice
+function setVoice(e) {
+  message.voice = voices.find(voice => voice.name === e.target.value)
+}
+
 // voices changed
 speechSynthesis.addEventListener('voiceschanged', getVoices)
 
@@ -116,5 +173,15 @@ toggleBtn.addEventListener('click',
 // close button
 closeBtn.addEventListener('click', 
 () => document.getElementById('text-box').classList.remove('show'))
+
+
+// Change voice
+voicesSelect.addEventListener('change', setVoice)
+
+// Red text button
+readBtn.addEventListener('click', () => {
+  setTextMessage(textarea.value);
+  speakText()
+})
 
 getvoices()

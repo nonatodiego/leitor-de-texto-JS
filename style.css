@@ -5,15 +5,31 @@
 }
 
 body {
-  background-color: #ffefea;
+  
+  background-color: #f29e03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='46' height='46' fill-opacity='0.6' fill='%23ffa61d'/%3E%3C/svg%3E");
+
+
   font-family: 'Lato';
   min-height: 100vh;
   margin: 0;
+  color: #000;
 }
 
-h1 {
-  text-align: center
+h1,p, small {
+  text-align: center;
 }
+
+p {
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+small {
+  display: block;
+  margin-bottom: 24px;
+}
+
 
 .container {
   margin: 0 auto;
@@ -22,7 +38,7 @@ h1 {
 
 .btn {
   cursor: pointer;
-  background-color: darksalmon;
+  background-color: blue;
   border: 0;
   border-radius:4px;
   font-size: 16px;
@@ -63,7 +79,7 @@ select:focus {
 }
 
 .text-box select {
-  background-color: darksalmon;
+  background-color: blue;
   border: 0;
   color: #fff;
   font-size: 12px;
@@ -109,7 +125,7 @@ main {
 }
 
 .box.active {
-  box-shadow: 0 0 10px 5px darksalmon;
+  box-shadow: 0 0 10px 5px blue;
 }
 
 .box img{
@@ -119,7 +135,7 @@ main {
 }
 
 .box .info {
-  background-color: darksalmon;
+  background-color: blue;
   color: #fff;
   font-size:18px;
   letter-spacing: 1px;
@@ -128,6 +144,12 @@ main {
   padding: 10px;
   text-align: center;
   height: 100%;
+}
+
+footer {
+  padding: 20px;
+  font-weight: bold;
+  text-align: center;
 }
 
 @media(max-width: 1100px) {

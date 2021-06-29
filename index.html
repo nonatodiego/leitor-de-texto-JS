@@ -10,21 +10,30 @@
 <body>
 
   <div class="container">
-    <h1>Leitor de texto</h1>
+    <h1>Web Speech API</h1>
+    <small>* utilizando firefox ou internet explorer, o site pode apresentar mal funcionamento, por favor utilize outro navegador</small>
+
+    <p>Esse app tem como objetivo utilizar a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API" target="_blank"> Web Speech API </a> </p>
     <button id="toggle" class="btn btn-toggle">
-      Toggle text box
+      👉 Clique aqui para mais opções de vozes 🔊
     </button>
+    <p>Clique em uma das imagens para ouvir ou clique no botão acima para mais opções</p>
 
     <div id="text-box" class="text-box">
       <div id="close" class="close">X</div>
       <h3>Escolha a voz:</h3>
       <select id="voices"></select>
-      <textarea id="text" placeholder="Digite o texto a ser lido..."></textarea>
-      <button class="btn" id="read">Ler o texto</button>
+      <!-- opção para digitar e a api ler -->
+      <!-- <textarea id="text" placeholder="Digite o texto a ser lido..."></textarea>
+      <button class="btn" id="read">Ler o texto</button> -->
     </div>
 
     <main></main>
   </div>
+
+  <footer>
+    Desenvolvido por 🛠 <a href="https://diegononato.netlify.com/">Diego Nonato</a>
+  </footer>
 
 
 
